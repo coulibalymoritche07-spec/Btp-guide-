@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide Suprême BTP</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1a5276">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>🏗️ Guide Suprême BTP</h1>
+        <nav>
+            <button onclick="showModule('accueil')">Accueil</button>
+            <button onclick="showModule('ouvrages')">Ouvrages</button>
+            <button onclick="showModule('metre')">Métré/Devis</button>
+            <button onclick="showModule('methodes')">Méthodes</button>
+            <button onclick="showModule('planning')">Planning</button>
+            <button onclick="showModule('rapports')">Rapports</button>
+            <button onclick="showModule('normes')">Normes</button>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- Module Accueil -->
+        <div id="accueil" class="module active">
+            <h2>Bienvenue sur le Guide Suprême BTP</h2>
+            <p>Sélectionnez un type d'ouvrage ou utilisez la recherche</p>
+            
+            <div class="ouvrages-grid">
+                <div class="ouvrage-card" onclick="chargerOuvrage('dalot')">
+                    <h3>🕳️ Dalot</h3>
+                    <p>Ouvrage hydraulique enterré</p>
+                </div>
+                <div class="ouvrage-card" onclick="chargerOuvrage('batiment')">
+                    <h3>🏢 Bâtiment R+2</h3>
+                    <p>Construction bâtiment</p>
+                </div>
+                <div class="ouvrage-card" onclick="chargerOuvrage('route')">
+                    <h3>🛣️ Route</h3>
+                    <p>Voirie et réseaux divers</p>
+                </div>
+                <div class="ouvrage-card" onclick="chargerOuvrage('pont')">
+                    <h3>🌉 Pont</h3>
+                    <p>Ouvrage d'art</p>
+                </div>
+                <div class="ouvrage-card" onclick="chargerOuvrage('assainissement')">
+                    <h3>💧 Assainissement</h3>
+                    <p>Réseaux d'assainissement</p>
+                </div>
+                <div class="ouvrage-card" onclick="chargerOuvrage('terrassement')">
+                    <h3>⛏️ Terrassement</h3>
+                    <p>Terrassements généraux</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="ouvrages" class="module"></div>
+        <div id="metre" class="module"></div>
+        <div id="methodes" class="module"></div>
+        <div id="planning" class="module"></div>
+        <div id="rapports" class="module"></div>
+        <div id="normes" class="module"></div>
+    </main>
+
+    <script src="js/database.js"></script>
+    <script src="js/modules/ouvrages.js"></script>
+    <script src="js/modules/metre.js"></script>
+    <script src="js/modules/methodes.js"></script>
+    <script src="js/modules/planning.js"></script>
+    <script src="js/modules/rapports.js"></script>
+    <script src="js/modules/normes.js"></script>
+    <script src="js/app.js"></script>
+</body>
+          </html>
