@@ -54,4 +54,29 @@ function calculerMetre() {
         const foulle = (L + 1) * (l + 2*ep + 1) * (h + er + et + 0.3);
         const proprete = (L + 0.4) * (l + 2*ep + 0.4) * 0.1;
         const radier = (L + 0.4) * (l + 2*ep + 0.4) * er;
-        const piedroits
+        const piedroits = 2 * L * ep * h;
+        const tablier = (L + 0.4) * (l + 2*ep + 0.4) * et;
+        const totalBeton = radier + piedroits + tablier;
+        const acier = totalBeton * 100; // 100 kg/m³
+        
+        const lignes = [
+            ['Terrassement fouille', 'm³', foulle, 3000],
+            ['Béton de propreté', 'm³', proprete, 45000],
+            ['Béton armé radier', 'm³', radier, 85000],
+            ['Béton armé piédroits', 'm³', piedroits, 90000],
+            ['Béton armé tablier', 'm³', tablier, 95000],
+            ['Acier HA', 'kg', acier, 850]
+        ];
+        
+        lignes.forEach(([designation, unite, quantite, pu]) => {
+            const montant = quantite * pu;
+            total += montant;
+            html += `<tr><td>${designation}</td><td>${unite}</td><td>${quantite.toFixed(2)}</td><td>${pu.toLocaleString()}</td><td>${montant.toLocaleString()}</td></tr>`;
+        });
+    }
+    
+    html += `<tr class="total"><td colspan="4"><strong>TOTAL GÉNÉRAL HT</strong></td><td><strong>${total.toLocaleString()} FCFA</strong></td></tr>`;
+    html += '</tbody></table>';
+    
+    document.getElementById('resultats-metre').innerHTML = html;
+}
