@@ -1,0 +1,21 @@
+{
+    "name": "Guide Suprême BTP",
+    "short_name": "BTP Guide",
+    "description": "Guide complet pour les acteurs du BTP",
+    "start_url": "/btp-guide/",
+    "display": "standalone",
+    "background_color": "#f4f6f9",
+    "theme_color": "#1a5276",
+    "icons": [
+        {
+            "src": "icons/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
